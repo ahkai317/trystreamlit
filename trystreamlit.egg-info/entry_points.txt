@@ -1,0 +1,2 @@
+[console_scripts]
+trystreamlit = trystreamlit.__main__:main
