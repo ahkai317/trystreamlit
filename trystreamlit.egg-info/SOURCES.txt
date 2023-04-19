@@ -1,8 +1,0 @@
-README.md
-setup.py
-trystreamlit.egg-info/PKG-INFO
-trystreamlit.egg-info/SOURCES.txt
-trystreamlit.egg-info/dependency_links.txt
-trystreamlit.egg-info/entry_points.txt
-trystreamlit.egg-info/requires.txt
-trystreamlit.egg-info/top_level.txt

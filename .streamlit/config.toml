@@ -1,1 +1,29 @@
-[runner]
+[server]
+# headless = true
+port = 80
+enableCORS = false
+
+[logger]
+level = "warning"
+
+[venv]
+dir = "venv"
+
+[theme]
+primaryColor = "#44C7B5"
+backgroundColor = "#292D3E"
+secondaryBackgroundColor = "#1B1E2B"
+textColor = "#fffff"
+font = "sans serif"
+
+[theme.stickyHeaders]
+backgroundColor = "#F63C63"
+
+[theme.floatingFooter]
+backgroundColor = "#F63C63"
+
+[theme.backButton]
+backgroundColor = "#44C7B5"
+
+[theme.progressBar]
+backgroundColor = "#F63C63"

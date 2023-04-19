@@ -2,7 +2,6 @@ import streamlit as st
 import altair as alt
 import numpy as np
 import pandas as pd
-import emoji as emo
 from decimal import Decimal
 
 import time
@@ -134,7 +133,7 @@ def detail_list_table(data):
 
 
 # Cache (以達同步渲染，不需重整網頁)
-@st.cache(suppress_st_warning = True)
+@st.cache_data(suppress_st_warning = True)
 def expensive_computation(pic):
     if pic is not None:
         time.sleep(1)
@@ -197,7 +196,24 @@ color_scale = alt.Scale(
 bars = alt.Chart(summary_long).mark_bar().encode(
     x=alt.X("value:Q", title=None, axis=None, stack="zero"),
     y=alt.Y("index:N", title=None),
-    color=alt.Color("metric:N", title=None, scale=color_scale, legend=alt.Legend(title=None, labelFontSize=12, labelLimit=300, labelPadding=10, labelOverlap=True, direction="horizontal", orient="top", symbolLimit=0, symbolType="circle"), sort=["PlayerCount", "BetCount", "Bet", "ValidBet", "GameWin", "JPWin", "CompanyProfit", "AvgValidBet"]),
+    color=alt.Color(
+        "metric:N",
+        title=None,
+        scale=color_scale,
+        legend=alt.Legend(
+            title=None,
+            labelFontSize=12,
+            labelLimit=300,
+            labelPadding=10,
+            labelOverlap=True,
+            direction="horizontal",
+            orient="top",
+            symbolLimit=0,
+            symbolType="circle"
+            ),
+        sort=["PlayerCount", "BetCount", "Bet", "ValidBet", "GameWin", "JPWin", "CompanyProfit", "AvgValidBet"]
+        # sort=["Bet", "ValidBet", "GameWin", "JPWin", "CompanyProfit"]
+        ),
     tooltip=[alt.Tooltip("metric:N", title="指標"), alt.Tooltip("value:Q", title="數值", format=",.0f")],
 ).properties(
     height=100
