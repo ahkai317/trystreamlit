@@ -130,7 +130,7 @@ for i in range(100):
 space(1)
 
 # Cache (以達同步渲染，不需重整網頁)
-@st.cache(suppress_st_warning = True)
+@st.cache()
 def expensive_computation(a):
     st.write(f"沒有快取：expensive_computation({a})")
     time.sleep(2)

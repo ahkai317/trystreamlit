@@ -133,7 +133,7 @@ def detail_list_table(data):
 
 
 # Cache (以達同步渲染，不需重整網頁)
-@st.cache(suppress_st_warning = True)
+@st.cache()
 def expensive_computation(pic):
     if pic is not None:
         time.sleep(1)
